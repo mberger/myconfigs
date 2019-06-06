@@ -1,0 +1,51 @@
+# Add Homebrew `/usr/local/bin` and User `~/bin` to the `$PATH`
+export PATH=$PATH:/usr/local/bin:$HOME/bin:$EC2_HOME/bin:~/.local/bin
+
+#export PATH=$PATH:$EC2_HOME/bin
+#export PATH=$PATH:~/.local/bin
+#export PATH=/:$PATH
+
+export WORKON_HOME=~/Envs
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+#source /usr/local/bin/virtualenvwrapper.sh
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.5.1
+export GOROOT=/usr/local/Cellar/go/1.12.5/libexec/
+#export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+export GOPATH="$HOME/Documents/go/"
+
+# Load the shell dotfiles, and then some:
+# * ~/.path can be used to extend `$PATH`.
+# * ~/.extra can be used for other settings you don’t want to commit.
+for file in ~/.{path,bash_prompt,exports,aliases,functions,extra}; do
+  [ -r "$file" ] && source "$file"
+done
+unset file
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# Setting PATH for Python 3.6
+# The original version is saved in .bash_profile.pysave
+#PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+#xport PATH
+PATH=$PATH:/opt/metasploit-framework/bin
+export PATH=$PATH:/opt/metasploit-framework/bin
+export HOMEBREW_GITHUB_API_TOKEN=your_token_here
+
+##
+# Your previous /Users/michaelberger/.bash_profile file was backed up as /Users/michaelberger/.bash_profile.macports-saved_2018-12-18_at_13:19:33
+##
+
+# MacPorts Installer addition on 2018-12-18_at_13:19:33: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/michaelberger/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Users/michaelberger/Downloads/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/michaelberger/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/michaelberger/Downloads/google-cloud-sdk/completion.bash.inc'; fi
